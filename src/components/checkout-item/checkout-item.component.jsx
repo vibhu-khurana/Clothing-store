@@ -1,10 +1,5 @@
 import React from 'react';
 import './checkout-item.styles.scss';
-import { createStructuredSelector } from 'reselect';
-import {
-  selectCartItems,
-  selectCartTotal,
-} from '../../redux/cart/cart.selectors';
 
 const CheckoutItem = ({ cartItem: { name, imageUrl, price, quantity } }) => (
   <div className='checkout-item'>
