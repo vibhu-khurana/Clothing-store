@@ -1,25 +1,23 @@
 import React from 'react';
-
 import StripeCheckout from 'react-stripe-checkout';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
-  const publishableKey =
-    'pk_test_51HRwcDLisNsFqggjXabGJF9prKbIEi4JGBDwyRb4ThKHR6QkfGvjpGTQKNIYLVANfHSanFgz2Z1M2yJ8zP5XKMBQ00MR0jmkuN';
+  const publishableKey = 'pk_test_WBqax2FWVzS9QlpJScO07iuL';
 
-  const onToken = (token) => {
+  const onToken = token => {
     console.log(token);
-    alert('Payment Successful');
+    alert('Payment Succesful!');
   };
 
   return (
     <StripeCheckout
       label='Pay Now'
-      name='Clothing Store Ltd.'
+      name='CRWN Clothing Ltd.'
       billingAddress
       shippingAddress
-      image='https://sendeyo.com/up/d/f3eb2117da'
-      description={`Your total is ${price}`}
+      image='https://svgshare.com/i/CUz.svg'
+      description={`Your total is $${price}`}
       amount={priceForStripe}
       panelLabel='Pay Now'
       token={onToken}
